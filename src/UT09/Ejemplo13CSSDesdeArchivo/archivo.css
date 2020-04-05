@@ -1,0 +1,32 @@
+
+/* 
+    Created on : 28-mar-2019, 13:32:09
+    Author     : Salvador Romero
+*/
+
+#contenedorPrincipal
+{
+    -fx-background-color: #f9ce8c;
+    -fx-alignment: center;
+}
+
+#cabecera
+{
+    -fx-font-size:30; 
+    -fx-fill: #f93322;
+}
+
+#cabecera:hover {    
+    -fx-fill: #000000;
+    -fx-effect:dropshadow(one-pass-box,#f96841,3,1,3,2,2)
+}
+
+#cuerpo {
+    -fx-font-size:15; 
+    -fx-fill: #f96841;   
+}
+
+#cuerpo:hover {    
+    -fx-fill: #000000;
+    -fx-effect:dropshadow(one-pass-box,#f97e54,2,1,2,1,1)
+}
