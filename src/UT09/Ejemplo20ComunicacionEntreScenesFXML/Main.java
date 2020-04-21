@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UT09.Ejemplo19ComunicacionEntreScenes;
+package UT09.Ejemplo20ComunicacionEntreScenesFXML;
 
 import UT09.Ejemplo20ComunicacionEntreScenesFXML.dialog_add_person.DialogAddPerson;
-import UT09.Ejemplo20ComunicacionEntreScenesFXML.Persona;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
@@ -23,8 +22,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- *
- * @author salva
+ * Ejemplo que ilustra como comunicar un Stage con otro Stage, cuando
+ * el segundo Stage es de tipo "Dialog" (ventana emergente). 
+ * @author Salvador Romero Villegas
  */
 public class Main extends Application{
     
@@ -68,8 +68,11 @@ public class Main extends Application{
         h.setCenter(mostrarListaDePersonas);       
         añadir.setOnAction((a)->
         {
+            //Aquí creamos el Dialog para añadir persona
             DialogAddPerson s=new DialogAddPerson(primaryStage);
+            //Usamos showAndWait para esperar a que se cierre
             s.showAndWait();
+            //Rescatamos los datos del Dialog con métodos nuestros creados a medida
             if (!s.esCancelado())
                 listaDePersona.add(s.getPersona());
             actualizarLista();
@@ -87,5 +90,16 @@ public class Main extends Application{
         actualizarLista();
         primaryStage.setScene(new Scene(h,300,300));
     }    
+    
+    /**
+     * Método general para mostrar un error.
+     * @param error Mensaje de error.
+     */
+    public static void mostrarError(String error) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Error en los datos.");
+        alert.setContentText(error);
+        alert.showAndWait();
+    }
     
 }

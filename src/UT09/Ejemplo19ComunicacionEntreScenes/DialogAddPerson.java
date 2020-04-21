@@ -5,6 +5,7 @@
  */
 package UT09.Ejemplo19ComunicacionEntreScenes;
 
+import UT09.Ejemplo20ComunicacionEntreScenesFXML.Persona;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
